@@ -247,7 +247,48 @@ html, body {
 		return tweet_a;
 	}
 	
+	
+	
+	
+	
 
+	
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '125356112918261',
+	      cookie     : true,
+	      xfbml      : true,
+	      version    : 'v10.0'
+	    });
+	      
+	    FB.AppEvents.logPageView();   
+	      
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	
+	
+	
+	
+	
+	  function logout(){
+		  FB.getLoginStatus(function(response){
+		 	 FB.logout(function(response) {
+		 		 console.log('Logged out');
+		 		 window.location = "/";
+		 		 
+		 	});
+		  });
+		  }
+	
+	
+	
 	
 	
 </script>
@@ -282,6 +323,7 @@ html, body {
 							</td>
 							<td width="45%" align="center"><p style="font-weight: bold;font-size: 25px; color: #1fa694">FB-AI Companion</p></td>
 							<td width="20%" align="right"><%=request.getAttribute("user_name")%></td>
+							<li><a id ="logout" href="#" onclick="logout()">LogoutfromFacebook</a></li>
 						</tr>
 					</table>
 				</div>

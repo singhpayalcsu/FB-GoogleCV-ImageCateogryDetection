@@ -54,7 +54,7 @@ html, body {
 				statusChangeCallback(response);
 			});
 		}
-		
+		/*
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId : '125356112918261',
@@ -67,6 +67,34 @@ html, body {
 				statusChangeCallback(response); // Returns the login status.
 			});
 		};
+		*/
+		
+		
+
+		
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '125356112918261',
+		      cookie     : true,
+		      xfbml      : true,
+		      version    : 'v10.0'
+		    });
+		      
+		    FB.AppEvents.logPageView();  
+		    FB.getLoginStatus(function(response) { // Called after the JS SDK has been initialized.
+				statusChangeCallback(response); // Returns the login status.
+			});
+		      
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "https://connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		
 
 		function loadFormData() { 
 			console.log('Welcome!  Fetching your information.... ');
@@ -82,6 +110,13 @@ html, body {
 								
 							});
 		}
+		
+
+		function logout(){
+		 	 FB.logout(function(response) {
+		 		 console.log('Logged out')
+		 	});
+		  }
 		
 	</script>
 
