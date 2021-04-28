@@ -97,7 +97,7 @@ html, body {
 		
 
 		function loadFormData() { 
-			console.log('Welcome!  Fetching your information.... ');
+			console.log('Welcome! Plese wait... Getting your information.... ');
 			FB
 					.api(
 							'/me?fields=name',
@@ -135,7 +135,7 @@ html, body {
 		</tr>
 		<tr style="height: 20%">
 			<td align="center">
-				<div id=""><p style="font-weight: bold;font-size: 50px; color: #1fa694"> FB AI Companion</p></div>
+				<div id=""><p style="font-weight: bold;font-size: 50px; color: #ff0066"> Facebook-GoogleCV </p></div>
 			</td>
 		</tr>
 		<tr style="height: 30%">
@@ -148,11 +148,11 @@ html, body {
 
 		<tr style="height: 20%">
 			<td align="center" >
-				<div id=""><p style="font-size: 30Px; color: #f27c05;"> Run analytics on your FB Photos </p></div>
+				<div id=""><p style="font-size: 30Px; color: #f27c05;"> Run Computer Vision on your FB Photos </p></div>
 			</td>
 		</tr>
 		<tr style="height: 5%">
-			<td align="center">Copyright &copy; CSU WEB 2020</td>
+			<td align="center">Copyright &copy; CSU WEB 2021</td>
 		</tr>
 	</table>
 

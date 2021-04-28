@@ -14,7 +14,7 @@
   gtag('config', 'G-7X5FRFYW67');
 </script>
 
-<title>FB-AI Companion</title>
+<title>Facebook-GoogleCV</title>
 <meta charset="UTF-8">
 
 <link
@@ -65,7 +65,7 @@ html, body {
 }
  
 .sidebar a.active {
-  background-color: #4CAF50;
+  background-color: #ff6699;
   color: white;
 }
 
@@ -110,9 +110,9 @@ html, body {
 		$("#datepicker-2").datepicker().datepicker('setDate', date);
 	});
 	
-	function getImages(){
+	function fetchUserImage(){
 		
-		clearData();
+		cleanDashboard();
 		
 		document.getElementById("loader").style.display = "block";
 		
@@ -127,7 +127,7 @@ html, body {
 			  },
 			  success: function(response) {
 			    console.log(response);
-			    drawImages(response);
+			    createImages(response);
 			  },
 			  error: function(xhr) {
 				  document.getElementById("loader").style.display="none";
@@ -136,7 +136,7 @@ html, body {
 			});
 	}
 	
-	function clearData(){
+	function cleanDashboard(){
 		var content_div = document.getElementById("div_content");
 		while (content_div.firstChild) {
 			content_div.removeChild(content_div.lastChild);
@@ -150,7 +150,7 @@ html, body {
 	
 	var currentLabelDisplay;
 	var currentLabelA;
-	function drawImages(response){
+	function createImages(response){
 		var content_div = document.getElementById("div_content");
 		var sidebar_div = document.getElementById("div_sidebar");
 		
@@ -211,7 +211,7 @@ html, body {
 	    	  var p_space = document.createElement("p");
 	    	  p_space.text="&#32";
 	    	  label_div.appendChild(p_space);
-	    	  label_div.appendChild(createTwitterButton(obj.url));
+	    	  label_div.appendChild(twiteer(obj.url));
 	    	  label_div.appendChild(document.createElement("br"));
 	    	  label_div.appendChild(document.createElement("br"));
 	    	  label_div.appendChild(document.createElement("br"));
@@ -236,7 +236,7 @@ html, body {
 		return img;
 	}
 	
-	function createTwitterButton(image_url){
+	function twiteer(image_url){
 		var url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(image_url);
 		var tweet_a = document.createElement("a");
 		tweet_a.setAttribute("href",url);
@@ -316,7 +316,7 @@ html, body {
 												To: <input type="text" id="datepicker-2">
 											</p>
 										</td>
-										<td><input type="button" value="search" id="search" onclick="getImages()">
+										<td><input type="button" value="search1" id="search1" onclick="fetchUserImage()">
 										</td>
 									</tr>
 								</table>
@@ -342,7 +342,7 @@ html, body {
 			</td>
 		</tr>
 		<tr style="height: 5%">
-			<td align="center" colspan="2">Copyright &copy; CSU WEB 2020</td>
+			<td align="center" colspan="2">Copyright &copy; CSU WEB 2021</td>
 		</tr>
 	</table>
 
