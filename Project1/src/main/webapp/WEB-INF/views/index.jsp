@@ -19,7 +19,7 @@
 
 
 
-<title>FB-AI Companion</title>
+<title>Facebook-GoogleCV App</title>
 <meta charset="UTF-8">
 
 <style>
