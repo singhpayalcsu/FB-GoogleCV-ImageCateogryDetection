@@ -104,15 +104,15 @@ html, body {
 		var currentMonth = date.getMonth();
 		var currentDate = date.getDate();
 		var currentYear = date.getFullYear();
-		$("#datepicker-1").datepicker();
-		$("#datepicker-1").datepicker("setDate", new Date(currentYear, currentMonth-1, currentDate));
-		$("#datepicker-2").datepicker();
-		$("#datepicker-2").datepicker().datepicker('setDate', date);
+		//$("#datepicker-1").datepicker();
+		//$("#datepicker-1").datepicker("setDate", new Date(currentYear, currentMonth-1, currentDate));
+		//$("#datepicker-2").datepicker();
+		//$("#datepicker-2").datepicker().datepicker('setDate', date);
 	});
 	
 	function fetchUserImage(){
 		
-		cleanDashboard();
+		//cleanDashboard();
 		
 		document.getElementById("loader").style.display = "block";
 		
@@ -120,8 +120,11 @@ html, body {
 			  url: "/images",
 			  type: "get", //send it through get method
 			  data: { 
-			    fromDate: document.getElementById("datepicker-1").value, 
-			    toDate: document.getElementById("datepicker-2").value,
+			    //fromDate: document.getElementById("datepicker-1").value, 
+			    fromDate: '01/01/2001',
+			    //toDate: document.getElementById("datepicker-2").value,
+			    toDate: new Date().toLocaleString().split(',')[0],
+			    
 			    access_token:  document.getElementById("access_token").value,
 			    user_id:  document.getElementById("user_id").value
 			  },
@@ -295,18 +298,24 @@ html, body {
 
 
 </head>
-<body>
+<body onload="javascript:fetchUserImage()">
 	<table class="full-height" >
 
 		<tr style="height: 10%">
+		
 			<td style="align-items: center;" colspan="2">
 				<div class="header" id="div_header">
+				
 					<table style="width: 100%; height: 100%; padding: 0px;">
+					
 						<tr>
-							<td width="35%">
+						<!-- <td width="35%"> -->
+							<td width="5%">
+							<!--
 								<table>
 									<tr>
 										<td>
+										    
 											<p>
 												From: <input type="text" id="datepicker-1">
 											</p>
@@ -315,15 +324,21 @@ html, body {
 											<p>
 												To: <input type="text" id="datepicker-2">
 											</p>
+										
 										</td>
-										<td><input type="button" value="search1" id="search1" onclick="fetchUserImage()">
-										</td>
+										  <td><input type="button" value="search" id="search" onclick="fetchUserImage()"> 
+								         
+										
 									</tr>
 								</table>
+								-->
+								
 							</td>
-							<td width="45%" align="center"><p style="font-weight: bold;font-size: 25px; color: #1fa694">FB-AI Companion</p></td>
-							<td width="20%" align="right"><%=request.getAttribute("user_name")%></td>
-							<li><a id ="logout" href="#" onclick="logout()">LogoutfromFacebook</a></li>
+							
+							<td width="20%" align="left"><%=request.getAttribute("user_name")%></td>
+							<td width="45%" align="center"><p style="font-weight: bold;font-size: 25px; color: #ff0066">Facebook-GoogleCV App</p></td>
+							
+							<td><a id ="logout" href="#" align="right" onclick="logout()"> Log Out </a></td>
 						</tr>
 					</table>
 				</div>
@@ -352,7 +367,6 @@ html, body {
 	 <input type="hidden" name="user_name"  id="user_name"  value="<%=request.getAttribute("user_name")%>"> 
 	  <input type="hidden" name="user_id"  id="user_id" value="<%=request.getAttribute("user_id")%>">
 	</form>
-
 
 		</body>
 </html>

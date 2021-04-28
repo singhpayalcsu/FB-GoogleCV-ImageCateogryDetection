@@ -135,7 +135,7 @@ html, body {
 		</tr>
 		<tr style="height: 20%">
 			<td align="center">
-				<div id=""><p style="font-weight: bold;font-size: 50px; color: #ff0066"> Facebook-GoogleCV </p></div>
+				<div id=""><p style="font-weight: bold;font-size: 50px; color: #ff0066"> Facebook-GoogleCV App </p></div>
 			</td>
 		</tr>
 		<tr style="height: 30%">
@@ -148,7 +148,7 @@ html, body {
 
 		<tr style="height: 20%">
 			<td align="center" >
-				<div id=""><p style="font-size: 30Px; color: #f27c05;"> Run Computer Vision on your FB Photos </p></div>
+				<div id=""><p style="font-size: 30Px; color: #f27c05;"> Explore Google CV on your FB photos </p></div>
 			</td>
 		</tr>
 		<tr style="height: 5%">
