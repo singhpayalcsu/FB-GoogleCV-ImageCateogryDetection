@@ -70,7 +70,7 @@ html, body {
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: #0066ff;
   color: white;
 }
 
@@ -99,30 +99,19 @@ html, body {
 
 
 <script>
-	$(function() {
-		var date = new Date();
-		var currentMonth = date.getMonth();
-		var currentDate = date.getDate();
-		var currentYear = date.getFullYear();
-		//$("#datepicker-1").datepicker();
-		//$("#datepicker-1").datepicker("setDate", new Date(currentYear, currentMonth-1, currentDate));
-		//$("#datepicker-2").datepicker();
-		//$("#datepicker-2").datepicker().datepicker('setDate', date);
-	});
+	
 	
 	function fetchUserImage(){
 		
-		//cleanDashboard();
+		
 		
 		document.getElementById("loader").style.display = "block";
 		
 		$.ajax({
 			  url: "/images",
-			  type: "get", //send it through get method
+			  type: "get", 
 			  data: { 
-			    //fromDate: document.getElementById("datepicker-1").value, 
 			    fromDate: '01/01/2001',
-			    //toDate: document.getElementById("datepicker-2").value,
 			    toDate: new Date().toLocaleString().split(',')[0],
 			    
 			    access_token:  document.getElementById("access_token").value,
@@ -134,7 +123,7 @@ html, body {
 			  },
 			  error: function(xhr) {
 				  document.getElementById("loader").style.display="none";
-			    //Do Something to handle error
+			    
 			  }
 			});
 	}
@@ -223,7 +212,7 @@ html, body {
 	       
 	    });
 		
-		//twttr.widgets.load();
+		
 		document.getElementById("loader").style.display="none";
 	}
 	
@@ -309,33 +298,13 @@ html, body {
 					<table style="width: 100%; height: 100%; padding: 0px;">
 					
 						<tr>
-						<!-- <td width="35%"> -->
+						
 							<td width="5%">
-							<!--
-								<table>
-									<tr>
-										<td>
-										    
-											<p>
-												From: <input type="text" id="datepicker-1">
-											</p>
-										</td>
-										<td>
-											<p>
-												To: <input type="text" id="datepicker-2">
-											</p>
-										
-										</td>
-										  <td><input type="button" value="search" id="search" onclick="fetchUserImage()"> 
-								         
-										
-									</tr>
-								</table>
-								-->
+							
 								
 							</td>
 							
-							<td width="20%" align="left"><%=request.getAttribute("user_name")%></td>
+							<td width="20%" align="left"><p style=" color: #0066ff"><%=request.getAttribute("user_name")%></td>
 							<td width="45%" align="center"><p style="font-weight: bold;font-size: 25px; color: #ff0066">Facebook-GoogleCV App</p></td>
 							
 							<td><a id ="logout" href="#" align="right" onclick="logout()"> Log Out </a></td>
@@ -356,9 +325,7 @@ html, body {
 				</div>
 			</td>
 		</tr>
-		<tr style="height: 5%">
-			<td align="center" colspan="2">Copyright &copy; CSU WEB 2021</td>
-		</tr>
+		
 	</table>
 
 
